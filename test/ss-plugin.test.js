@@ -146,8 +146,6 @@ describe('SS Plugin Issue #290', () => {
     expect(proxy['plugin-opts'].path).toBe('/v2ray');
     expect(proxy['plugin-opts'].tls).toBe(true);  // Boolean flag without value
   });
-<<<<<<< HEAD
-
   it('should force Clash-compatible v2ray-plugin fields for SS websocket nodes', async () => {
     const ssUrl = 'ss://bm9uZTpwZXJmZWN0LXNz@108.162.198.16:443/?plugin=v2ray-plugin%3Bmode%3Dwebsocket%3Bhost%3Dinvent.rpt.de5.net%3Bpath%3D%2Fperfect-ss%2F%3Fed%3D2560%3Btls%3Bsni%3Dinvent.rpt.de5.net#%E6%97%A5%E6%9C%AC7';
 
@@ -168,8 +166,7 @@ describe('SS Plugin Issue #290', () => {
       allowInsecure: true
     });
     expect(proxy['plugin-opts'].sni).toBeUndefined();
+    expect(proxy.udp).toBeUndefined();
     expect(proxy['client-fingerprint']).toBe('chrome');
   });
-=======
->>>>>>> 5c6bc6cc0079cdb9b4acdf537e9dcec237ce0eba
 });
