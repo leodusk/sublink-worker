@@ -47,6 +47,7 @@ function getClashUdpValue(proxy, defaultEnabled = true) {
     return defaultEnabled;
 }
 
+<<<<<<< HEAD
 function parsePluginBool(value, defaultValue = undefined) {
     if (typeof value === 'boolean') return value;
     if (typeof value === 'number') return value !== 0;
@@ -82,6 +83,8 @@ function normalizeShadowsocksPluginOpts(proxy) {
     return opts;
 }
 
+=======
+>>>>>>> 5c6bc6cc0079cdb9b4acdf537e9dcec237ce0eba
 export class ClashConfigBuilder extends BaseConfigBuilder {
     constructor(inputString, selectedRules, customRules, baseConfig, lang, userAgent, groupByCountry = false, enableClashUI = false, externalController, externalUiDownloadUrl, includeAutoSelect = true) {
         if (!baseConfig) {
@@ -175,8 +178,12 @@ export class ClashConfigBuilder extends BaseConfigBuilder {
                     password: proxy.password,
                     udp: getClashUdpValue(proxy),
                     ...(proxy.plugin ? { plugin: proxy.plugin } : {}),
+<<<<<<< HEAD
                     ...(proxy.plugin_opts ? { 'plugin-opts': normalizeShadowsocksPluginOpts(proxy) } : {}),
                     ...(proxy.plugin === 'v2ray-plugin' ? { 'client-fingerprint': 'chrome' } : {})
+=======
+                    ...(proxy.plugin_opts ? { 'plugin-opts': proxy.plugin_opts } : {})
+>>>>>>> 5c6bc6cc0079cdb9b4acdf537e9dcec237ce0eba
                 };
             case 'vmess':
                 return {
